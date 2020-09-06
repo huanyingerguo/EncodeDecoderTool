@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F93E25B22504CDED00956A9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F93E25B12504CDED00956A9E /* AppDelegate.m */; };
+		F93E25B52504CDED00956A9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93E25B42504CDED00956A9E /* ViewController.m */; };
+		F93E25B72504CDEF00956A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93E25B62504CDEF00956A9E /* Assets.xcassets */; };
+		F93E25BA2504CDEF00956A9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93E25B82504CDEF00956A9E /* Main.storyboard */; };
+		F93E25BD2504CDEF00956A9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F93E25BC2504CDEF00956A9E /* main.m */; };
+		F93E25C82504CDEF00956A9E /* EncodeDecoderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F93E25C72504CDEF00956A9E /* EncodeDecoderTests.m */; };
+		F93E25D32504CDEF00956A9E /* EncodeDecoderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F93E25D22504CDEF00956A9E /* EncodeDecoderUITests.m */; };
+		F93E25E52504D53C00956A9E /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = F93E25E22504D53C00956A9E /* GTMBase64.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F93E25C42504CDEF00956A9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F93E25A52504CDEC00956A9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F93E25AC2504CDED00956A9E;
+			remoteInfo = EncodeDecoder;
+		};
+		F93E25CF2504CDEF00956A9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F93E25A52504CDEC00956A9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F93E25AC2504CDED00956A9E;
+			remoteInfo = EncodeDecoder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F93E25AD2504CDED00956A9E /* EncodeDecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncodeDecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F93E25B02504CDED00956A9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F93E25B12504CDED00956A9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F93E25B32504CDED00956A9E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F93E25B42504CDED00956A9E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F93E25B62504CDEF00956A9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F93E25B92504CDEF00956A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F93E25BB2504CDEF00956A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F93E25BC2504CDEF00956A9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F93E25BE2504CDEF00956A9E /* EncodeDecoder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EncodeDecoder.entitlements; sourceTree = "<group>"; };
+		F93E25C32504CDEF00956A9E /* EncodeDecoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EncodeDecoderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F93E25C72504CDEF00956A9E /* EncodeDecoderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncodeDecoderTests.m; sourceTree = "<group>"; };
+		F93E25C92504CDEF00956A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F93E25CE2504CDEF00956A9E /* EncodeDecoderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EncodeDecoderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F93E25D22504CDEF00956A9E /* EncodeDecoderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncodeDecoderUITests.m; sourceTree = "<group>"; };
+		F93E25D42504CDEF00956A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F93E25E22504D53C00956A9E /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMBase64.m; path = EncodeDecoder/lib/GTM/GTMBase64.m; sourceTree = SOURCE_ROOT; };
+		F93E25E32504D53C00956A9E /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMBase64.h; path = EncodeDecoder/lib/GTM/GTMBase64.h; sourceTree = SOURCE_ROOT; };
+		F93E25E42504D53C00956A9E /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = EncodeDecoder/lib/GTM/GTMDefines.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F93E25AA2504CDED00956A9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F93E25C02504CDEF00956A9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F93E25CB2504CDEF00956A9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F93E25A42504CDEC00956A9E = {
+			isa = PBXGroup;
+			children = (
+				F93E25AF2504CDED00956A9E /* EncodeDecoder */,
+				F93E25C62504CDEF00956A9E /* EncodeDecoderTests */,
+				F93E25D12504CDEF00956A9E /* EncodeDecoderUITests */,
+				F93E25AE2504CDED00956A9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F93E25AE2504CDED00956A9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F93E25AD2504CDED00956A9E /* EncodeDecoder.app */,
+				F93E25C32504CDEF00956A9E /* EncodeDecoderTests.xctest */,
+				F93E25CE2504CDEF00956A9E /* EncodeDecoderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F93E25AF2504CDED00956A9E /* EncodeDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				F93E25E02504D51C00956A9E /* Biz */,
+				F93E25B02504CDED00956A9E /* AppDelegate.h */,
+				F93E25B12504CDED00956A9E /* AppDelegate.m */,
+				F93E25B32504CDED00956A9E /* ViewController.h */,
+				F93E25B42504CDED00956A9E /* ViewController.m */,
+				F93E25B62504CDEF00956A9E /* Assets.xcassets */,
+				F93E25B82504CDEF00956A9E /* Main.storyboard */,
+				F93E25BB2504CDEF00956A9E /* Info.plist */,
+				F93E25BC2504CDEF00956A9E /* main.m */,
+				F93E25BE2504CDEF00956A9E /* EncodeDecoder.entitlements */,
+			);
+			path = EncodeDecoder;
+			sourceTree = "<group>";
+		};
+		F93E25C62504CDEF00956A9E /* EncodeDecoderTests */ = {
+			isa = PBXGroup;
+			children = (
+				F93E25C72504CDEF00956A9E /* EncodeDecoderTests.m */,
+				F93E25C92504CDEF00956A9E /* Info.plist */,
+			);
+			path = EncodeDecoderTests;
+			sourceTree = "<group>";
+		};
+		F93E25D12504CDEF00956A9E /* EncodeDecoderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F93E25D22504CDEF00956A9E /* EncodeDecoderUITests.m */,
+				F93E25D42504CDEF00956A9E /* Info.plist */,
+			);
+			path = EncodeDecoderUITests;
+			sourceTree = "<group>";
+		};
+		F93E25E02504D51C00956A9E /* Biz */ = {
+			isa = PBXGroup;
+			children = (
+				F93E25E12504D52800956A9E /* GTM */,
+			);
+			path = Biz;
+			sourceTree = "<group>";
+		};
+		F93E25E12504D52800956A9E /* GTM */ = {
+			isa = PBXGroup;
+			children = (
+				F93E25E32504D53C00956A9E /* GTMBase64.h */,
+				F93E25E22504D53C00956A9E /* GTMBase64.m */,
+				F93E25E42504D53C00956A9E /* GTMDefines.h */,
+			);
+			path = GTM;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F93E25AC2504CDED00956A9E /* EncodeDecoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F93E25D72504CDEF00956A9E /* Build configuration list for PBXNativeTarget "EncodeDecoder" */;
+			buildPhases = (
+				F93E25A92504CDED00956A9E /* Sources */,
+				F93E25AA2504CDED00956A9E /* Frameworks */,
+				F93E25AB2504CDED00956A9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EncodeDecoder;
+			productName = EncodeDecoder;
+			productReference = F93E25AD2504CDED00956A9E /* EncodeDecoder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F93E25C22504CDEF00956A9E /* EncodeDecoderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F93E25DA2504CDEF00956A9E /* Build configuration list for PBXNativeTarget "EncodeDecoderTests" */;
+			buildPhases = (
+				F93E25BF2504CDEF00956A9E /* Sources */,
+				F93E25C02504CDEF00956A9E /* Frameworks */,
+				F93E25C12504CDEF00956A9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F93E25C52504CDEF00956A9E /* PBXTargetDependency */,
+			);
+			name = EncodeDecoderTests;
+			productName = EncodeDecoderTests;
+			productReference = F93E25C32504CDEF00956A9E /* EncodeDecoderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F93E25CD2504CDEF00956A9E /* EncodeDecoderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F93E25DD2504CDEF00956A9E /* Build configuration list for PBXNativeTarget "EncodeDecoderUITests" */;
+			buildPhases = (
+				F93E25CA2504CDEF00956A9E /* Sources */,
+				F93E25CB2504CDEF00956A9E /* Frameworks */,
+				F93E25CC2504CDEF00956A9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F93E25D02504CDEF00956A9E /* PBXTargetDependency */,
+			);
+			name = EncodeDecoderUITests;
+			productName = EncodeDecoderUITests;
+			productReference = F93E25CE2504CDEF00956A9E /* EncodeDecoderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F93E25A52504CDEC00956A9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "jinglin sun";
+				TargetAttributes = {
+					F93E25AC2504CDED00956A9E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					F93E25C22504CDEF00956A9E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = F93E25AC2504CDED00956A9E;
+					};
+					F93E25CD2504CDEF00956A9E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = F93E25AC2504CDED00956A9E;
+					};
+				};
+			};
+			buildConfigurationList = F93E25A82504CDEC00956A9E /* Build configuration list for PBXProject "EncodeDecoder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F93E25A42504CDEC00956A9E;
+			productRefGroup = F93E25AE2504CDED00956A9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F93E25AC2504CDED00956A9E /* EncodeDecoder */,
+				F93E25C22504CDEF00956A9E /* EncodeDecoderTests */,
+				F93E25CD2504CDEF00956A9E /* EncodeDecoderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F93E25AB2504CDED00956A9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F93E25B72504CDEF00956A9E /* Assets.xcassets in Resources */,
+				F93E25BA2504CDEF00956A9E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F93E25C12504CDEF00956A9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F93E25CC2504CDEF00956A9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F93E25A92504CDED00956A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F93E25B52504CDED00956A9E /* ViewController.m in Sources */,
+				F93E25BD2504CDEF00956A9E /* main.m in Sources */,
+				F93E25B22504CDED00956A9E /* AppDelegate.m in Sources */,
+				F93E25E52504D53C00956A9E /* GTMBase64.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F93E25BF2504CDEF00956A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F93E25C82504CDEF00956A9E /* EncodeDecoderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F93E25CA2504CDEF00956A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F93E25D32504CDEF00956A9E /* EncodeDecoderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F93E25C52504CDEF00956A9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F93E25AC2504CDED00956A9E /* EncodeDecoder */;
+			targetProxy = F93E25C42504CDEF00956A9E /* PBXContainerItemProxy */;
+		};
+		F93E25D02504CDEF00956A9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F93E25AC2504CDED00956A9E /* EncodeDecoder */;
+			targetProxy = F93E25CF2504CDEF00956A9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F93E25B82504CDEF00956A9E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F93E25B92504CDEF00956A9E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F93E25D52504CDEF00956A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F93E25D62504CDEF00956A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F93E25D82504CDEF00956A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EncodeDecoder/EncodeDecoder.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EncodeDecoder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.EncodeDecoder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F93E25D92504CDEF00956A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EncodeDecoder/EncodeDecoder.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EncodeDecoder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.EncodeDecoder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F93E25DB2504CDEF00956A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EncodeDecoderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.EncodeDecoderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EncodeDecoder.app/Contents/MacOS/EncodeDecoder";
+			};
+			name = Debug;
+		};
+		F93E25DC2504CDEF00956A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EncodeDecoderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.EncodeDecoderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EncodeDecoder.app/Contents/MacOS/EncodeDecoder";
+			};
+			name = Release;
+		};
+		F93E25DE2504CDEF00956A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EncodeDecoderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.EncodeDecoderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EncodeDecoder;
+			};
+			name = Debug;
+		};
+		F93E25DF2504CDEF00956A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EncodeDecoderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.EncodeDecoderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EncodeDecoder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F93E25A82504CDEC00956A9E /* Build configuration list for PBXProject "EncodeDecoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F93E25D52504CDEF00956A9E /* Debug */,
+				F93E25D62504CDEF00956A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F93E25D72504CDEF00956A9E /* Build configuration list for PBXNativeTarget "EncodeDecoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F93E25D82504CDEF00956A9E /* Debug */,
+				F93E25D92504CDEF00956A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F93E25DA2504CDEF00956A9E /* Build configuration list for PBXNativeTarget "EncodeDecoderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F93E25DB2504CDEF00956A9E /* Debug */,
+				F93E25DC2504CDEF00956A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F93E25DD2504CDEF00956A9E /* Build configuration list for PBXNativeTarget "EncodeDecoderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F93E25DE2504CDEF00956A9E /* Debug */,
+				F93E25DF2504CDEF00956A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F93E25A52504CDEC00956A9E /* Project object */;
+}
