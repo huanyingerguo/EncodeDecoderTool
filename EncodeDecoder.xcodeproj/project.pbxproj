@@ -15,6 +15,7 @@
 		F93E25C82504CDEF00956A9E /* EncodeDecoderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F93E25C72504CDEF00956A9E /* EncodeDecoderTests.m */; };
 		F93E25D32504CDEF00956A9E /* EncodeDecoderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F93E25D22504CDEF00956A9E /* EncodeDecoderUITests.m */; };
 		F93E25E52504D53C00956A9E /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = F93E25E22504D53C00956A9E /* GTMBase64.m */; };
+		F93E25E92505CF6500956A9E /* NSString+EncodeDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = F93E25E82505CF6500956A9E /* NSString+EncodeDecode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		F93E25E22504D53C00956A9E /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMBase64.m; path = EncodeDecoder/lib/GTM/GTMBase64.m; sourceTree = SOURCE_ROOT; };
 		F93E25E32504D53C00956A9E /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMBase64.h; path = EncodeDecoder/lib/GTM/GTMBase64.h; sourceTree = SOURCE_ROOT; };
 		F93E25E42504D53C00956A9E /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = EncodeDecoder/lib/GTM/GTMDefines.h; sourceTree = SOURCE_ROOT; };
+		F93E25E72505CF6500956A9E /* NSString+EncodeDecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+EncodeDecode.h"; sourceTree = "<group>"; };
+		F93E25E82505CF6500956A9E /* NSString+EncodeDecode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+EncodeDecode.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,7 @@
 		F93E25E02504D51C00956A9E /* Biz */ = {
 			isa = PBXGroup;
 			children = (
+				F93E25E62505CF3800956A9E /* NSString */,
 				F93E25E12504D52800956A9E /* GTM */,
 			);
 			path = Biz;
@@ -152,6 +156,15 @@
 				F93E25E42504D53C00956A9E /* GTMDefines.h */,
 			);
 			path = GTM;
+			sourceTree = "<group>";
+		};
+		F93E25E62505CF3800956A9E /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				F93E25E72505CF6500956A9E /* NSString+EncodeDecode.h */,
+				F93E25E82505CF6500956A9E /* NSString+EncodeDecode.m */,
+			);
+			path = NSString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F93E25B52504CDED00956A9E /* ViewController.m in Sources */,
+				F93E25E92505CF6500956A9E /* NSString+EncodeDecode.m in Sources */,
 				F93E25BD2504CDEF00956A9E /* main.m in Sources */,
 				F93E25B22504CDED00956A9E /* AppDelegate.m in Sources */,
 				F93E25E52504D53C00956A9E /* GTMBase64.m in Sources */,

@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "GTMBase64.h"
+#import "NSString+EncodeDecode.h"
+
+static NSDateFormatter *crfdateFormatter = nil;
 
 @interface ViewController()
 @property (weak) IBOutlet NSButton *sBaseMsgIDOption;
@@ -20,6 +23,8 @@
 @property (weak) IBOutlet NSButton *urlOption;
 @property (weak) IBOutlet NSButton *unicodeOption;
 @property (weak) IBOutlet NSButton *jsonOption;
+@property (weak) IBOutlet NSButton *unixTimeOption;
+
 @property (weak) IBOutlet NSTextView *inputText;
 @property (weak) IBOutlet NSTextView *outputText;
 
@@ -65,6 +70,7 @@
              self.unicodeOption,
              self.urlOption,
              self.jsonOption,
+             self.unixTimeOption
              ];
 }
 
@@ -76,42 +82,76 @@
         return;
     }
     
+    BOOL isExecuted = [self executeEncodeCommand:input forButtonClicked:sender];
+    if (!isExecuted) {
+        NSError *error = [NSError errorWithDomain:@"encodeCommand" code:-1 userInfo:nil];
+        NSAlert *alert = [NSAlert alertWithError:error];
+        [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
+        }];
+    }
+}
+
+- (BOOL)executeEncodeCommand:(NSString *)input forButtonClicked:(NSButton *)sender {
     if (self.selectedOption == self.base64Option) {
         self.outputText.string = [GTMBase64 stringByEncodeString:input];
-        return;
+        return YES;
+    }
+    
+    if (self.selectedOption == self.base64OFromXMLption) {
+        NSString *output = [GTMBase64 stringByEncodeString:input];
+        output = [output stringByReplacingOccurrencesOfString:@"&#x0A;" withString:@" "];
+        self.outputText.string = output;
+        return YES;
+    }
+    
+    if (self.selectedOption == self.unixTimeOption) {
+        long long timeStamp = [input longLongValue];
+        NSDate *currentData = [NSDate dateWithTimeIntervalSince1970:timeStamp];
+        NSString *localTime = [self getLocalFormatDate:currentData];
+        
+        self.outputText.string = [NSString stringWithFormat:@"%@", localTime];
+        return YES;
+    }
+        
+    if (self.selectedOption == self.sha256Option) {
+        return NO;
     }
     
     if (self.selectedOption == self.sha256Option) {
-        return;
+        return NO;
     }
     
     if (self.selectedOption == self.sha1Option) {
-        return;
+        return NO;
     }
     
     if (self.selectedOption == self.md5Option) {
-        return;
+        return NO;
     }
     
     if (self.selectedOption == self.hashOption) {
-        return;
+        return NO;
     }
     
     if (self.selectedOption == self.urlOption) {
-        return;
+        self.outputText.string = [input queryStringPercentEncode];
+        return YES;
     }
     
     if (self.selectedOption == self.unicodeOption) {
-        return;
+        self.outputText.string = [input utf8ToUnicode];
+        return YES;
     }
     
     if (self.selectedOption == self.sBaseMsgIDOption) {
-        return;
+        return NO;
     }
     
     if (self.selectedOption == self.jsonOption) {
-        return;
+        return NO;
     }
+    
+    return NO;
 }
 
 - (IBAction)deCodeClicked:(id)sender {
@@ -120,13 +160,23 @@
         return;
     }
     
+    BOOL isExecuted = [self executeDecodeCommand:output forButtonClicked:sender];
+    if (!isExecuted) {
+        NSError *error = [NSError errorWithDomain:@"decodeCommand" code:-1 userInfo:nil];
+        NSAlert *alert = [NSAlert alertWithError:error];
+        [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
+        }];
+    }
+}
+
+- (BOOL)executeDecodeCommand:(NSString *)output forButtonClicked:(NSButton *)sender {
     if (self.selectedOption == self.base64Option) {
         NSData *encodeData = [GTMBase64 decodeString:output];
         if (encodeData.length) {
             NSString *ouputMsg = [NSString stringWithCString:encodeData.bytes encoding:NSUTF8StringEncoding];
             self.inputText.string = ouputMsg;
         }
-        return;
+        return YES;
     }
     
     if (self.selectedOption == self.base64OFromXMLption) {
@@ -136,31 +186,7 @@
             NSString *ouputMsg = [NSString stringWithCString:encodeData.bytes encoding:NSUTF8StringEncoding];
             self.inputText.string = ouputMsg;
         }
-        return;
-    }
-    
-    if (self.selectedOption == self.sha256Option) {
-        return;
-    }
-    
-    if (self.selectedOption == self.sha1Option) {
-        return;
-    }
-    
-    if (self.selectedOption == self.md5Option) {
-        return;
-    }
-    
-    if (self.selectedOption == self.hashOption) {
-        return;
-    }
-    
-    if (self.selectedOption == self.urlOption) {
-        return;
-    }
-    
-    if (self.selectedOption == self.unicodeOption) {
-        return;
+        return YES;
     }
     
     if (self.selectedOption == self.sBaseMsgIDOption) {
@@ -170,12 +196,47 @@
         NSString *localTime = [self getLocalFormatDate:currentData];
         
         self.inputText.string = [NSString stringWithFormat:@"timeStr=%@ \r\nlocaltime=%@", @(timeStamp).stringValue, localTime];
-        return;
+        return YES;
+    }
+    
+    if (self.selectedOption == self.unixTimeOption) {
+        NSDate *localTime = [self getLocalDateFormatString:output];
+        long long timeInterval = [localTime timeIntervalSince1970];
+        self.inputText.string = [NSString stringWithFormat:@"%@", @(timeInterval).stringValue];
+        return YES;
+    }
+    
+    if (self.selectedOption == self.sha256Option) {
+        return NO;
+    }
+    
+    if (self.selectedOption == self.sha1Option) {
+        return NO;
+    }
+    
+    if (self.selectedOption == self.md5Option) {
+        return NO;
+    }
+    
+    if (self.selectedOption == self.hashOption) {
+        return NO;
+    }
+    
+    if (self.selectedOption == self.urlOption) {
+        self.inputText.string = [output queryStringPercentDecode];
+        return YES;
+    }
+    
+    if (self.selectedOption == self.unicodeOption) {
+        self.inputText.string = [output unicodeToUft8];
+        return YES;
     }
     
     if (self.selectedOption == self.jsonOption) {
-        return;
+        return NO;
     }
+    
+    return NO;
 }
 
 - (IBAction)onOptionBtnClick:(NSButton *)sender {
@@ -184,13 +245,31 @@
 
 #pragma mark-
 - (NSString *)getLocalFormatDate:(NSDate *)date {
-    static NSDateFormatter *crfdateFormatter = nil;
     if (crfdateFormatter==nil) {
         crfdateFormatter = [[NSDateFormatter alloc]init];
         NSTimeZone *timeZone = [NSTimeZone localTimeZone];
         [crfdateFormatter setTimeZone:timeZone];
-        [crfdateFormatter setDateFormat:@"yyyy-MM-dd HH:MM:ss"];
     }
+    
+    [crfdateFormatter setDateFormat:@"yyyy-MM-dd HH:MM:ss"];
     return [crfdateFormatter stringFromDate:date];
+}
+
+- (NSDate *)getLocalDateFormatString:(NSString *)string {
+    if (crfdateFormatter==nil) {
+        crfdateFormatter = [[NSDateFormatter alloc]init];
+        NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+        [crfdateFormatter setTimeZone:timeZone];
+    }
+    
+    if ([string containsString:@"/"]) {
+        [crfdateFormatter setDateFormat:@"yyyy/MM/dd HH:MM:ss"];
+    } else if ([string containsString:@"-"]) {
+        [crfdateFormatter setDateFormat:@"yyyy-MM-dd HH:MM:ss"];
+    } else {
+        [crfdateFormatter setDateFormat:@"yyyyMMdd HH:MM:ss"];
+    }
+    
+    return [crfdateFormatter dateFromString:string];
 }
 @end

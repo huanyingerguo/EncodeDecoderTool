@@ -685,7 +685,7 @@
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -763,17 +763,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kdI-qB-tua">
-                                <rect key="frame" x="325" y="514" width="102" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Encode&gt;&gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6D5-cK-0JO">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="encodeClicked:" target="XfG-lQ-9wD" id="g1A-yP-xt7"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uee-iO-x43">
                                 <rect key="frame" x="59" y="768" width="69" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -873,6 +862,17 @@
                                     <action selector="onOptionBtnClick:" target="XfG-lQ-9wD" id="hdb-BA-fWh"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7Q-vV-xJc">
+                                <rect key="frame" x="429" y="738" width="115" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="radio" title="unix timestamp" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="u5J-Wl-uDz">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onOptionBtnClick:" target="XfG-lQ-9wD" id="Xjw-oI-vRO"/>
+                                </connections>
+                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hqs-Ro-AnG">
                                 <rect key="frame" x="286" y="738" width="122" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -882,6 +882,17 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="onOptionBtnClick:" target="XfG-lQ-9wD" id="XUt-I3-D5p"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kdI-qB-tua">
+                                <rect key="frame" x="325" y="514" width="102" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Encode&gt;&gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6D5-cK-0JO">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="encodeClicked:" target="XfG-lQ-9wD" id="g1A-yP-xt7"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYp-oe-uPL">
@@ -905,12 +916,11 @@
                         <outlet property="jsonOption" destination="fA4-3B-3vj" id="7iz-M2-oSa"/>
                         <outlet property="md5Option" destination="4NU-QO-ewu" id="yXj-41-LCD"/>
                         <outlet property="outputText" destination="3RG-j8-6gY" id="D9l-eL-9RI"/>
-                        <outlet property="sBaseMsgID" destination="ZT7-8D-kRL" id="wjc-0c-1Wl"/>
-                        <outlet property="sBaseMsgIDBtn" destination="ZT7-8D-kRL" id="Axy-sa-ffP"/>
                         <outlet property="sBaseMsgIDOption" destination="ZT7-8D-kRL" id="C1U-O7-pka"/>
                         <outlet property="sha1Option" destination="6hN-Hv-NfW" id="ziK-T4-al4"/>
                         <outlet property="sha256Option" destination="fTj-78-U5s" id="bbh-K6-HwJ"/>
                         <outlet property="unicodeOption" destination="2MT-95-ae8" id="6iX-aS-kc9"/>
+                        <outlet property="unixTimeOption" destination="o7Q-vV-xJc" id="gSH-Wx-8Ch"/>
                         <outlet property="urlOption" destination="xb7-uG-jIx" id="X0f-nj-gQa"/>
                     </connections>
                 </viewController>
