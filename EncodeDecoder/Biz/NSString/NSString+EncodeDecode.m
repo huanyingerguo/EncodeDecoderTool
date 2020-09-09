@@ -136,7 +136,7 @@
     CC_SHA256(data.bytes, (CC_LONG)data.length, result);
     
     NSMutableString *stringBuffer = [NSMutableString stringWithCapacity:(self.length * 2)];
-    for (int i = 0; i < self.length; ++i) {
+    for (int i = 0; i < CC_SHA256_DIGEST_LENGTH; ++i) {
         [stringBuffer appendFormat:@"%02x", result[i]];
     }
     return [stringBuffer copy];
