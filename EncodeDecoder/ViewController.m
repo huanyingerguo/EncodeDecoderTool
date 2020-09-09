@@ -93,13 +93,13 @@ static NSDateFormatter *crfdateFormatter = nil;
 
 - (BOOL)executeEncodeCommand:(NSString *)input forButtonClicked:(NSButton *)sender {
     if (self.selectedOption == self.base64Option) {
-        self.outputText.string = [GTMBase64 stringByEncodeString:input];
+        self.outputText.string = [input encodeBase64];
         return YES;
     }
     
     if (self.selectedOption == self.base64OFromXMLption) {
-        NSString *output = [GTMBase64 stringByEncodeString:input];
-        output = [output stringByReplacingOccurrencesOfString:@"&#x0A;" withString:@" "];
+        NSString *output = [input encodeBase64];
+        output = [output stringByReplacingOccurrencesOfString:@" " withString:@"&#x0A;"];
         self.outputText.string = output;
         return YES;
     }
@@ -109,24 +109,23 @@ static NSDateFormatter *crfdateFormatter = nil;
         NSDate *currentData = [NSDate dateWithTimeIntervalSince1970:timeStamp];
         NSString *localTime = [self getLocalFormatDate:currentData];
         
-        self.outputText.string = [NSString stringWithFormat:@"%@", localTime];
+        self.outputText.string = [NSString stringWithFormat:@"timeStr=%@ \r\nlocaltime=%@, \r\ntimeDesc=%@", @(timeStamp).stringValue, localTime, currentData];
         return YES;
-    }
-        
-    if (self.selectedOption == self.sha256Option) {
-        return NO;
     }
     
     if (self.selectedOption == self.sha256Option) {
-        return NO;
+        self.outputText.string = [input sha256];
+        return YES;
     }
     
     if (self.selectedOption == self.sha1Option) {
-        return NO;
+        self.outputText.string = [input sha1];
+        return YES;
     }
     
     if (self.selectedOption == self.md5Option) {
-        return NO;
+        self.outputText.string = [input md5];
+        return YES;
     }
     
     if (self.selectedOption == self.hashOption) {
@@ -144,7 +143,9 @@ static NSDateFormatter *crfdateFormatter = nil;
     }
     
     if (self.selectedOption == self.sBaseMsgIDOption) {
-        return NO;
+        long long timeStamp = ((input.longLongValue * 1000) << 20)  + arc4random()%1000;
+        self.outputText.string = @(timeStamp).stringValue;
+        return YES;
     }
     
     if (self.selectedOption == self.jsonOption) {
@@ -171,21 +172,13 @@ static NSDateFormatter *crfdateFormatter = nil;
 
 - (BOOL)executeDecodeCommand:(NSString *)output forButtonClicked:(NSButton *)sender {
     if (self.selectedOption == self.base64Option) {
-        NSData *encodeData = [GTMBase64 decodeString:output];
-        if (encodeData.length) {
-            NSString *ouputMsg = [NSString stringWithCString:encodeData.bytes encoding:NSUTF8StringEncoding];
-            self.inputText.string = ouputMsg;
-        }
+        self.inputText.string = [output decodeBase64];
         return YES;
     }
     
     if (self.selectedOption == self.base64OFromXMLption) {
         output = [output stringByReplacingOccurrencesOfString:@"&#x0A;" withString:@" "];
-        NSData *encodeData = [GTMBase64 decodeString:output];
-        if (encodeData.length) {
-            NSString *ouputMsg = [NSString stringWithCString:encodeData.bytes encoding:NSUTF8StringEncoding];
-            self.inputText.string = ouputMsg;
-        }
+        self.inputText.string = [output decodeBase64];
         return YES;
     }
     
@@ -195,7 +188,7 @@ static NSDateFormatter *crfdateFormatter = nil;
         NSDate *currentData = [NSDate dateWithTimeIntervalSince1970:timeStamp];
         NSString *localTime = [self getLocalFormatDate:currentData];
         
-        self.inputText.string = [NSString stringWithFormat:@"timeStr=%@ \r\nlocaltime=%@", @(timeStamp).stringValue, localTime];
+        self.inputText.string = [NSString stringWithFormat:@"timeStr=%@ \r\nlocaltime=%@, \r\ntimeDesc=%@", @(timeStamp).stringValue, localTime, currentData];
         return YES;
     }
     
@@ -247,12 +240,32 @@ static NSDateFormatter *crfdateFormatter = nil;
 - (NSString *)getLocalFormatDate:(NSDate *)date {
     if (crfdateFormatter==nil) {
         crfdateFormatter = [[NSDateFormatter alloc]init];
-        NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+        NSTimeZone *timeZone = [NSTimeZone systemTimeZone];
         [crfdateFormatter setTimeZone:timeZone];
     }
     
-    [crfdateFormatter setDateFormat:@"yyyy-MM-dd HH:MM:ss"];
+    // 这里注意：分是小写的mm. 如果错误写成MM，则改位置对应出来的是“月份的值”
+    // 这里注意：秒是小写的ss. 如果错误写成MM，则改位置对应出来的是“00”
+    [crfdateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:SS"];
     return [crfdateFormatter stringFromDate:date];
+}
+
+//把国际时间转换为当前系统时间
+- (NSDate *)getNowDateFromatAnDate:(NSDate *)anyDate
+{
+    //设置源日期时区
+    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];//或GMT
+    //设置转换后的目标日期时区
+    NSTimeZone* destinationTimeZone = [NSTimeZone localTimeZone];
+    //得到源日期与世界标准时间的偏移量
+    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:anyDate];
+    //目标日期与本地时区的偏移量
+    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:anyDate];
+    //得到时间偏移量的差值
+    NSTimeInterval interval = destinationGMTOffset - sourceGMTOffset;
+    //转为现在时间
+    NSDate* destinationDateNow = [[NSDate alloc] initWithTimeInterval:interval sinceDate:anyDate];
+    return destinationDateNow;
 }
 
 - (NSDate *)getLocalDateFormatString:(NSString *)string {
@@ -263,11 +276,11 @@ static NSDateFormatter *crfdateFormatter = nil;
     }
     
     if ([string containsString:@"/"]) {
-        [crfdateFormatter setDateFormat:@"yyyy/MM/dd HH:MM:ss"];
+        [crfdateFormatter setDateFormat:@"yyyy/MM/dd HH:mmss"];
     } else if ([string containsString:@"-"]) {
-        [crfdateFormatter setDateFormat:@"yyyy-MM-dd HH:MM:ss"];
+        [crfdateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     } else {
-        [crfdateFormatter setDateFormat:@"yyyyMMdd HH:MM:ss"];
+        [crfdateFormatter setDateFormat:@"yyyyMMdd HH:mm:ss"];
     }
     
     return [crfdateFormatter dateFromString:string];

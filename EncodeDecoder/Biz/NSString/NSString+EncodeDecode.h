@@ -15,6 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)queryStringPercentDecode;
 - (NSString *)utf8ToUnicode;
 - (NSString *)unicodeToUft8;
+- (NSString *)encodeBase64;
+- (NSString *)decodeBase64;
+- (NSString *)md5;
+- (NSString *)sha1;
+- (NSString *)sha256;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -829,17 +829,6 @@
                                     <action selector="onOptionBtnClick:" target="XfG-lQ-9wD" id="4bs-Ua-zky"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2MT-95-ae8">
-                                <rect key="frame" x="583" y="768" width="73" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="Unicode" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="TK3-3c-mGv">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="onOptionBtnClick:" target="XfG-lQ-9wD" id="mbl-t9-Dc4"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZT7-8D-kRL">
                                 <rect key="frame" x="59" y="740" width="104" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -863,9 +852,9 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7Q-vV-xJc">
-                                <rect key="frame" x="429" y="738" width="115" height="18"/>
+                                <rect key="frame" x="429" y="738" width="135" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="unix timestamp" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="u5J-Wl-uDz">
+                                <buttonCell key="cell" type="radio" title="unix timestamp (s)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="u5J-Wl-uDz">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -904,6 +893,17 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="deCodeClicked:" target="XfG-lQ-9wD" id="NUQ-jL-JXb"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2MT-95-ae8">
+                                <rect key="frame" x="627" y="768" width="73" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="radio" title="Unicode" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="TK3-3c-mGv">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onOptionBtnClick:" target="XfG-lQ-9wD" id="mbl-t9-Dc4"/>
                                 </connections>
                             </button>
                         </subviews>
