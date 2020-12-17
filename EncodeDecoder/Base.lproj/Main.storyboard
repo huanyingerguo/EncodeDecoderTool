@@ -906,12 +906,24 @@
                                     <action selector="onOptionBtnClick:" target="XfG-lQ-9wD" id="mbl-t9-Dc4"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFQ-5C-XVi">
+                                <rect key="frame" x="590" y="738" width="117" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="radio" title="htm(Xml)Totext" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="ozd-wq-FXM">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onOptionBtnClick:" target="XfG-lQ-9wD" id="5iR-mH-FbB"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="base64OFromXMLption" destination="Hqs-Ro-AnG" id="Wwe-cq-pAJ"/>
                         <outlet property="base64Option" destination="Uee-iO-x43" id="vad-f8-Ff3"/>
                         <outlet property="hashOption" destination="5jl-Ju-QmH" id="hxb-Q4-hr2"/>
+                        <outlet property="htmlToText" destination="qFQ-5C-XVi" id="X6o-mK-Kvl"/>
                         <outlet property="inputText" destination="2to-pr-j0c" id="NfP-ip-6ai"/>
                         <outlet property="jsonOption" destination="fA4-3B-3vj" id="7iz-M2-oSa"/>
                         <outlet property="md5Option" destination="4NU-QO-ewu" id="yXj-41-LCD"/>

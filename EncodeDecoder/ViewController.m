@@ -24,6 +24,7 @@ static NSDateFormatter *crfdateFormatter = nil;
 @property (weak) IBOutlet NSButton *unicodeOption;
 @property (weak) IBOutlet NSButton *jsonOption;
 @property (weak) IBOutlet NSButton *unixTimeOption;
+@property (weak) IBOutlet NSButton *htmlToText;
 
 @property (weak) IBOutlet NSTextView *inputText;
 @property (weak) IBOutlet NSTextView *outputText;
@@ -196,6 +197,12 @@ static NSDateFormatter *crfdateFormatter = nil;
         NSDate *localTime = [self getLocalDateFormatString:output];
         long long timeInterval = [localTime timeIntervalSince1970];
         self.inputText.string = [NSString stringWithFormat:@"%@", @(timeInterval).stringValue];
+        return YES;
+    }
+    
+    if (self.selectedOption == self.htmlToText) {
+    //    NSXMLElement *ele = [[NSXMLElement alloc] initWithXMLString:output error:nil];
+        self.inputText.string = [output removeHtml];
         return YES;
     }
     

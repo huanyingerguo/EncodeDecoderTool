@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)md5;
 - (NSString *)sha1;
 - (NSString *)sha256;
+- (NSString*)removeHtml;
+- (NSString *)stringByDecodingXMLEntities;
 @end
 
 NS_ASSUME_NONNULL_END
